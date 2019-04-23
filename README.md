@@ -29,6 +29,24 @@ The environment variable `JUNIT_REPORT_STACK` is used to enable writing the stac
 
 The environment variable `JUNIT_REPORT_PACKAGES` is used to enable package name to be represented by relative path to test.
 
+The environment variable `JUNIT_REPORT_NESTED_SUITES` is used to enable nesting testsuite elements in the `xunit` report.
+```
+<testsuites name="test">
+  <testsuite name="api" tests="0" errors="0" failures="0" skipped="0" timestamp="2019-04-23T03:45:39" time="0.009">
+    <testsuite name="api GET /api/users" tests="1" errors="0" failures="0" skipped="0" timestamp="2019-04-23T03:45:39" time="0.011">
+      <testcase classname="test.api GET /api/users" name="respond with an array of users" time="0.001">
+      </testcase>
+    </testsuite>
+  </testsuite>
+  <testsuite name="app" tests="0" errors="0" failures="0" skipped="0" timestamp="2019-04-23T03:45:39" time="0.002">
+    <testsuite name="app GET /users" tests="1" errors="0" failures="0" skipped="0" timestamp="2019-04-23T03:45:39" time="0.015">
+      <testcase classname="test.app GET /users" name="respond with an array of users" time="0">
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>
+```
+
 Example console output of the reporter:
 
 ```
